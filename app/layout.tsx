@@ -4,38 +4,40 @@ import { siteConfig } from '@/site-config';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import '../styles/globals.css';
+import { HeaderBar } from '@/components/layouts/header-bar';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: siteConfig.name,
-  description: siteConfig.description,
-  icons: {
-    icon: [
-      {
-        media: '(prefers-color-scheme: light)',
-        url: '/logo.svg',
-      },
-      {
-        media: '(prefers-color-scheme: dark)',
-        url: '/logo-dark.svg',
-      },
-    ],
-  },
+	title: siteConfig.name,
+	description: siteConfig.description,
+	icons: {
+		icon: [
+			{
+				media: '(prefers-color-scheme: light)',
+				url: '/logo.svg'
+			},
+			{
+				media: '(prefers-color-scheme: dark)',
+				url: '/logo-dark.svg'
+			}
+		]
+	}
 };
 
 export default function RootLayout({
-  children,
+	children
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={inter.className}>
-        {children}
-        <NprogressBar />
-      </body>
-      <GoogleAnalytics />
-    </html>
-  );
+	return (
+		<html lang="zh">
+			<body className={inter.className}>
+				<HeaderBar />
+				<main className="py-6 lg:py-8 container">{children}</main>
+				<NprogressBar />
+			</body>
+			<GoogleAnalytics />
+		</html>
+	);
 }
