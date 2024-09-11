@@ -1,25 +1,22 @@
 'use client';
 
 import { getPostsAction } from '@/actions/post';
+import { PostApi } from '@/api';
 import CardLink from '@/components/card-link/card-link';
 import { Button } from '@/components/ui/button';
 import { Post } from '@/types/post';
 import { Loader2 } from 'lucide-react';
 import Image from 'next/image';
-import { useRef } from 'react';
 import useSWRInfinite from 'swr/infinite';
 
 const CardGallery = () => {
-	const startCursors = useRef<(string | undefined)[]>([void 0]);
-
 	const { data, isLoading, size, setSize } = useSWRInfinite(
-		(index) => ({ startCursor: startCursors.current[index] }),
-		(params) => getPostsAction(params),
-		{
-			onSuccess(data, key, config) {
-				startCursors.current.push(data[data.length - 1].next_cursor ?? void 0);
-			}
-		}
+		(pageIndex, previousPageData: PostApi.GetPostsResult) =>
+			previousPageData ? previousPageData.next_cursor : 'undefined',
+		(startCursor) =>
+			getPostsAction({
+				startCursor: startCursor === 'undefined' ? void 0 : startCursor
+			})
 	);
 
 	const list: Post[] = data
