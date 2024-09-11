@@ -30,7 +30,7 @@ export const getPostsApi = async ({
 		database_id: process.env.NOTION_DATABASE_ID ?? '',
 		page_size: pageSize,
 		start_cursor: startCursor,
-		sorts: [{ property: 'date', direction: 'descending' }],
+		sorts: [{ property: 'createdTime', direction: 'descending' }],
 		filter: {
 			and: [
 				{ type: 'select', property: 'status', select: { equals: 'published' } }
