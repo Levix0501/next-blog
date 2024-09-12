@@ -34,7 +34,7 @@ export default function RootLayout({
 		<html lang="zh">
 			<body className={inter.className}>
 				<HeaderBar />
-				<main className="py-6 lg:py-8 container">{children}</main>
+				{children}
 				<NprogressBar />
 			</body>
 			<GoogleAnalytics />

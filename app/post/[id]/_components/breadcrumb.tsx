@@ -12,7 +12,7 @@ const PostBreadcrumb = ({ title }: { title: string }) => {
 		<Breadcrumb className="mb-4">
 			<BreadcrumbList>
 				<BreadcrumbItem>
-					<BreadcrumbLink href="/">更多</BreadcrumbLink>
+					<BreadcrumbLink href="/">博客</BreadcrumbLink>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
 				<BreadcrumbItem>

@@ -1,10 +1,14 @@
 import highlight from 'rehype-highlight';
 import { visit } from 'unist-util-visit';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import { MDXRemoteProps } from 'next-mdx-remote/rsc';
 
-export const serializeOptions = {
+export const serializeOptions: MDXRemoteProps['options'] = {
 	parseFrontmatter: true,
 	mdxOptions: {
 		rehypePlugins: [
+			rehypeSlug,
 			() => (tree: any) => {
 				visit(tree, (node) => {
 					if (node?.type === 'element' && node?.tagName === 'pre') {
@@ -16,7 +20,17 @@ export const serializeOptions = {
 					}
 				});
 			},
-			highlight
+			highlight,
+			// rehypeAutolinkHeadings
+			[
+				rehypeAutolinkHeadings,
+				{
+					properties: {
+						className: ['subheading-anchor'],
+						ariaLabel: 'Link to section'
+					}
+				}
+			]
 		]
 	}
 };
