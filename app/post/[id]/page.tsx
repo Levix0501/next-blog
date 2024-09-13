@@ -32,6 +32,7 @@ const PostPage = async ({ params: { id } }: PostPageProps) => {
 						<CardContent className="p-0">
 							<div className="w-full pb-[calc(100vh-15rem)] relative rounded-md overflow-hidden">
 								<iframe
+									title={post.title}
 									srcDoc={post.htmlStr}
 									className="absolute w-full h-full"
 								></iframe>

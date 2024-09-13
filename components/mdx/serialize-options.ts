@@ -21,7 +21,6 @@ export const serializeOptions: MDXRemoteProps['options'] = {
 				});
 			},
 			highlight,
-			// rehypeAutolinkHeadings
 			[
 				rehypeAutolinkHeadings,
 				{
