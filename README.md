@@ -1,3 +1,7 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/527f12be72bd4015b7b9f01021df29dc)](https://app.codacy.com/gh/Levix0501/next-blog/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Levix0501_next-blog&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Levix0501_next-blog)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue)](https://opensource.org/licenses/MIT)
+
 ## 准备工作
 
 我们将通过 **Vercel** 和 **Notion** 来快速部署本项目。因此，需要你先注册这两个平台的账号。
