@@ -21,5 +21,5 @@ export const appConfig: AppConfig = {
 	notionDatabaseId: process.env.NOTION_DATABASE_ID as string,
 
 	// theme
-	theme: (process.env.APP_CONFIG_THEME as any) ?? 'blog'
+	theme: (process.env.APP_CONFIG_THEME as any) ?? 'doc'
 };
