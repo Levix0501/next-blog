@@ -4,7 +4,7 @@ import { serializeOptions } from './serialize-options';
 
 const MdxRemoteServer = ({ source }: { source: string }) => {
 	return (
-		<article className="prose max-w-screen-lg mx-auto">
+		<article className="prose max-w-screen-lg mx-auto break-words">
 			<MDXRemote
 				source={source}
 				components={mdxComponents}

@@ -27,7 +27,7 @@ export const getPostsApi = async ({
 	pageSize = 10
 }: PostApi.GetPostsParams): Promise<PostApi.GetPostsResult> => {
 	const { has_more, next_cursor, results } = await notion.databases.query({
-		database_id: process.env.NOTION_DATABASE_ID ?? '',
+		database_id: process.env.NOTION_DATABASE_ID as string,
 		page_size: pageSize,
 		start_cursor: startCursor,
 		sorts: [{ property: 'createdTime', direction: 'descending' }],

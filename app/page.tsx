@@ -1,9 +1,5 @@
-import CardGallery from './_components/card-gallery';
+import { ThemeLandingPage } from '@/themes';
 
-export default function Home() {
-	return (
-		<main className="py-6 lg:py-8 container">
-			<CardGallery />
-		</main>
-	);
+export default async function Home() {
+	return <ThemeLandingPage />;
 }
